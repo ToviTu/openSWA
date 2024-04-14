@@ -50,6 +50,7 @@ conf_matrix_long <- melt(conf_matrix_probs)
 
 # Plot using ggplot2
 ggplot(conf_matrix_long, aes(x = Predicted, y = Actual, fill = value)) +
+ggtitle("predict vs actual class for multinomial regression")+
   geom_tile(color = "white") +  # add tile geometry
   geom_text(aes(label = sprintf("%.2f", value)), color = "black", size = 4) +  # add text annotations
   scale_fill_gradient(low = "white", high = "blue") +  # color gradient
